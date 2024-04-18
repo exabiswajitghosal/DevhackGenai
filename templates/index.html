@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dev Hack GenAI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS can be added here */
+    </style>
+</head>
+<body class="bg-secondary">
+<main>
+    <div class="container">
+        <h1 class="text-center text-white">Dev-Hackathon GenAI</h1>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card mt-5">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title text-center">Analyze Risk Profile</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <input type="text" id="analyzeRiskProfile" class="form-control" value="{{host}}/api/analyze_risk_profile" readonly>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" onclick="copyCode('analyzeRiskProfile')">Copy</button>
+                            </div>
+                        </div>
+                        <h4>Request Body:</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">Method: POST</li>
+                            <li class="list-group-item">Headers: Authorization</li>
+                            <li class="list-group-item">Form-Data: industry, zip, state, city, age</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mx-auto">
+                <div class="card mt-5">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="card-title text-center">Get Gen Ai Data</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <input type="text" id="getGenAiData" class="form-control" value="{{host}}/api/get_genai_data" readonly>
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" onclick="copyCode('getGenAiData')">Copy</button>
+                            </div>
+                        </div>
+                        <h4>Request Body:</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">Method: POST</li>
+                            <li class="list-group-item">Headers: Authorization</li>
+                            <li class="list-group-item">Form-Data: category</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script>
+    function copyCode(elementId) {
+        var codeElement = document.getElementById(elementId);
+        var textArea = document.createElement('textarea');
+        textArea.value = codeElement.value;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert('Code copied to clipboard');
+    }
+</script>
+</body>
+</html>

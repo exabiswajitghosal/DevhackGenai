@@ -1,0 +1,15 @@
+Flask~=3.0.2
+flask_cors
+python-dotenv~=1.0.1
+Werkzeug~=3.0.1
+gunicorn
+langchain-community
+chromadb~=0.3.29
+langchain-openai
+boto3~=1.34.66
+openai~=1.14.2
+langchain
+unstructured
+unstructured[pdf]
+pikepdf
+requests~=2.31.0
