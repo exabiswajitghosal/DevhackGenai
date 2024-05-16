@@ -60,4 +60,3 @@ def generate_data_store(prefix):
         return False
 
 
-generate_data_store("safety/")
