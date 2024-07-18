@@ -35,7 +35,7 @@ def analyze_risk_profile():
         age = body.get('age') or "any"
         # policy_number = body.get('policyNumber')
         claims_data = body.get('claimsdata')
-        if not category or not industry or not zip_code or not state or not age or not claims_data:
+        if not category or not industry or not zip_code or not state or not age:
             return jsonify({'message': 'Please Give All Required Fields'}), 400
         if category in ["safety", "regulations", "vicinity"]:
             if category == "vicinity":
