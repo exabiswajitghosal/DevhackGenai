@@ -48,7 +48,7 @@ def generate_content_from_documents(category=None, industry=None, age=None, zip_
                     The details can be as specific as required for the construction industry on Lifting techniques,
                     Tool maintenance, communication methods, “to do” lists, checklists, safety or training courses etc.
                     Provide the details in 10 bullets points, limit each bullet point to 2 lines.'''
-    chroma_path = f"./chroma/{prefix}"
+    chroma_path = f"/chroma/{prefix}"
     # Prepare the DB.
     embedding_function = OpenAIEmbeddings(openai_api_key=openai_api)
     db = Chroma(persist_directory=chroma_path, embedding_function=embedding_function)

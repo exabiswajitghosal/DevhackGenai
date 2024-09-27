@@ -1,5 +1,5 @@
 # read the api_key.txt file
-with open('./etc/secrets/api_key.txt', 'r') as file:
+with open('/etc/secrets/api_key.txt', 'r') as file:
     API_KEY = file.read().replace('\n', '').split(",")
     
 

@@ -1,5 +1,6 @@
+import os
 from datetime import datetime
-
+from dotenv import load_dotenv
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 
@@ -9,10 +10,11 @@ from create_database import generate_data_store
 from weatherAPI import get_weather_alerts
 from auth import authenticate
 
+load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-host = "https://devhack-genai.onrender.com"
+host = os.getenv("HOST")
 
 
 @app.route('/')
@@ -141,4 +143,4 @@ def load_files_to_chunks():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
